@@ -34,29 +34,35 @@ class _OnboardPageState extends State<OnboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          SizedBox(height: 10 + getStatusBar(context)),
-          Text(
-            'Welcome to Our App!',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 32,
-              fontFamily: 'w900',
+          Positioned(
+            right: 0,
+            top: 0,
+            bottom: 0,
+            child: Center(
+              child: SvgWidget('assets/onboard.svg'),
             ),
           ),
-          Spacer(),
-          SvgWidget(
-            'assets/onboard.svg',
-            width: getWidth(context),
-            fit: BoxFit.cover,
+          Column(
+            children: [
+              SizedBox(height: 10 + getStatusBar(context)),
+              Text(
+                'Welcome to Our App!',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontFamily: 'w900',
+                ),
+              ),
+              Spacer(),
+              MainButton(
+                title: 'Let’s Get Started!',
+                onPressed: onNext,
+              ),
+              SizedBox(height: 40),
+            ],
           ),
-          Spacer(),
-          MainButton(
-            title: 'Let’s Get Started!',
-            onPressed: onNext,
-          ),
-          SizedBox(height: 40),
         ],
       ),
     );

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_quiz/src/core/widgets/dialogs/dialog_widget.dart';
 
 import '../../../blocs/coins/coins_bloc.dart';
 import '../../../core/models/quiz.dart';
-import '../../../core/utils.dart';
 import '../../../core/widgets/appbar.dart';
 import '../../../core/widgets/buttons/my_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
+import '../../../core/widgets/dialogs/dialog_widget.dart';
 import '../../../core/widgets/others/svg_widget.dart';
 
 class QuizPage extends StatefulWidget {
@@ -32,8 +31,8 @@ class _QuizPageState extends State<QuizPage> {
               title: 'Level ${widget.quiz.level.toString().padLeft(2, '0')}'),
           SizedBox(height: 8),
           Container(
-            height: getWidth(context) - 32,
-            width: getWidth(context) - 32,
+            height: 358,
+            width: 358,
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
               color: Color(0xff0E2438),
