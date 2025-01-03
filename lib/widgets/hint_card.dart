@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../blocs/coins/coins_bloc.dart';
-import '../../../core/widgets/buttons/my_button.dart';
-import '../../../core/widgets/dialogs/dialog_widget.dart';
-import '../../../core/widgets/others/svg_widget.dart';
+import '../coins/coins_bloc.dart';
+import 'my_button.dart';
+import 'dialog_widget.dart';
+import 'svg_widget.dart';
 
 class HintCard extends StatelessWidget {
   const HintCard({super.key});

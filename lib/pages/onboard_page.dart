@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/utils.dart';
-import '../../core/widgets/buttons/main_button.dart';
-import '../../core/widgets/others/svg_widget.dart';
-import '../home/pages/home_page.dart';
+import '../utils.dart';
+import '../widgets/main_button.dart';
+import '../widgets/svg_widget.dart';
+import 'home_page.dart';
 
 class OnboardPage extends StatefulWidget {
   const OnboardPage({super.key});
@@ -22,9 +22,7 @@ class _OnboardPageState extends State<OnboardPage> {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) {
-            return HomePage();
-          },
+          builder: (context) => HomePage(),
         ),
         (route) => false,
       );

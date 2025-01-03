@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/models/quiz.dart';
-import '../../../core/widgets/appbar.dart';
-import '../../../core/widgets/custom_scaffold.dart';
+import '../models/quiz.dart';
+import '../utils.dart';
+import '../widgets/appbar.dart';
+import '../widgets/custom_scaffold.dart';
 import '../widgets/quiz_card.dart';
 
 class LevelPage extends StatelessWidget {
@@ -18,7 +19,7 @@ class LevelPage extends StatelessWidget {
     return CustomScaffold(
       body: Column(
         children: [
-          Appbar(title: 'Level ${level.toString().padLeft(2, '0')}'),
+          Appbar(title: addZero(level)),
           Expanded(
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -29,9 +30,7 @@ class LevelPage extends StatelessWidget {
                   runSpacing: 8,
                   children: List.generate(
                     quizesList.length,
-                    (index) {
-                      return QuizCard(quiz: quizesList[index]);
-                    },
+                    (index) => QuizCard(quiz: quizesList[index]),
                   ),
                 ),
                 SizedBox(height: 16),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/appbar.dart';
-import '../../../core/widgets/custom_scaffold.dart';
+import '../widgets/appbar.dart';
+import '../widgets/custom_scaffold.dart';
 import '../widgets/level_card.dart';
 import '../widgets/shop_button.dart';
 
@@ -38,26 +38,26 @@ class HomePage extends StatelessWidget {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
-                        LevelCard(level: 1, lock: false),
-                        LevelCard(level: 2),
-                        LevelCard(level: 3),
-                        LevelCard(level: 4),
-                        LevelCard(level: 5),
-                        LevelCard(level: 6),
-                        LevelCard(level: 7),
-                        LevelCard(level: 8),
-                        LevelCard(level: 9),
-                        LevelCard(level: 10),
-                        LevelCard(level: 11),
-                        LevelCard(level: 12),
-                        LevelCard(level: 13),
-                        LevelCard(level: 14),
-                        LevelCard(level: 15),
-                        LevelCard(level: 16),
-                        LevelCard(level: 17),
-                        LevelCard(level: 18),
-                        LevelCard(level: 19),
-                        LevelCard(level: 20),
+                        LevelCard(level: 1, stars: 0),
+                        LevelCard(level: 2, stars: 16),
+                        LevelCard(level: 3, stars: 16 * 2),
+                        LevelCard(level: 4, stars: 16 * 3),
+                        LevelCard(level: 5, stars: 16 * 4),
+                        LevelCard(level: 6, stars: 16 * 5),
+                        LevelCard(level: 7, stars: 16 * 6),
+                        LevelCard(level: 8, stars: 16 * 7),
+                        LevelCard(level: 9, stars: 16 * 8),
+                        LevelCard(level: 10, stars: 16 * 9),
+                        LevelCard(level: 11, stars: 16 * 10),
+                        LevelCard(level: 12, stars: 16 * 11),
+                        LevelCard(level: 13, stars: 16 * 12),
+                        LevelCard(level: 14, stars: 16 * 13),
+                        LevelCard(level: 15, stars: 16 * 14),
+                        LevelCard(level: 16, stars: 16 * 15),
+                        LevelCard(level: 17, stars: 16 * 16),
+                        LevelCard(level: 18, stars: 16 * 17),
+                        LevelCard(level: 19, stars: 16 * 18),
+                        LevelCard(level: 20, stars: 16 * 19),
                       ],
                     ),
                     SizedBox(height: 120),

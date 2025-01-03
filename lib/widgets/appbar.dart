@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../blocs/coins/coins_bloc.dart';
-import '../../features/home/pages/settings_page.dart';
+import '../coins/coins_bloc.dart';
+import '../pages/settings_page.dart';
 import '../utils.dart';
-import 'buttons/my_button.dart';
-import 'others/svg_widget.dart';
+import 'my_button.dart';
+import 'svg_widget.dart';
 
 class Appbar extends StatelessWidget {
   const Appbar({

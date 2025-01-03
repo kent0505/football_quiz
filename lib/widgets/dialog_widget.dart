@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../buttons/main_button.dart';
+import 'main_button.dart';
 
 class DialogWidget extends StatelessWidget {
   const DialogWidget({

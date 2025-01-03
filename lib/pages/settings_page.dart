@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../core/utils.dart';
-import '../../../core/widgets/buttons/my_button.dart';
-import '../../../core/widgets/custom_scaffold.dart';
-import '../../../core/widgets/dialogs/dialog_widget.dart';
-import '../../../core/widgets/others/svg_widget.dart';
-import '../../splash/splash_page.dart';
+import '../utils.dart';
+import '../widgets/my_button.dart';
+import '../widgets/custom_scaffold.dart';
+import '../widgets/dialog_widget.dart';
+import '../widgets/svg_widget.dart';
+import 'splash_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

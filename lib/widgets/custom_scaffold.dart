@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../blocs/internet/internet_bloc.dart';
-import 'buttons/main_button.dart';
+import '../internet/internet_bloc.dart';
+import 'main_button.dart';
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold({

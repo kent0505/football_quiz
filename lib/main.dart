@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'src/blocs/coins/coins_bloc.dart';
-import 'src/core/config/themes.dart';
-import 'src/blocs/internet/internet_bloc.dart';
-import 'src/features/splash/splash_page.dart';
+import 'themes.dart';
+import 'coins/coins_bloc.dart';
+import 'internet/internet_bloc.dart';
+import 'pages/splash_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

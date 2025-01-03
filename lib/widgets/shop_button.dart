@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/buttons/my_button.dart';
-import '../../../core/widgets/others/svg_widget.dart';
+import 'my_button.dart';
+import 'svg_widget.dart';
 import '../pages/shop_page.dart';
 
 class ShopButton extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/models/quiz.dart';
-import '../../../core/utils.dart';
-import '../../../core/widgets/buttons/my_button.dart';
+import '../models/quiz.dart';
+import '../utils.dart';
+import 'my_button.dart';
 import '../pages/quiz_page.dart';
 
 class QuizCard extends StatelessWidget {
