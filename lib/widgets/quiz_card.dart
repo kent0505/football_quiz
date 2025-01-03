@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/quiz.dart';
-import '../utils.dart';
 import 'my_button.dart';
 import '../pages/quiz_page.dart';
 
@@ -27,8 +26,8 @@ class QuizCard extends StatelessWidget {
         );
       },
       child: Container(
-        height: getWidth(context) / 2 - 20,
-        width: getWidth(context) / 2 - 20,
+        height: MediaQuery.of(context).size.width / 2 - 20,
+        width: MediaQuery.of(context).size.width / 2 - 20,
         padding: EdgeInsets.all(14),
         decoration: BoxDecoration(
           color: Color(0xff0E2438),

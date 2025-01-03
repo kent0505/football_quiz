@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // precacheImages(context);
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => InternetBloc()..add(CheckInternet())),

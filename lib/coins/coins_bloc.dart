@@ -11,7 +11,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 10;
+      int hints = prefs.getInt('hints') ?? 100;
       bool onboard = prefs.getBool('onboard') ?? true;
       emit(CoinsLoaded(
         coins: coins,
@@ -25,7 +25,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 10;
+      int hints = prefs.getInt('hints') ?? 100;
       hints += 1;
       coins -= 50;
       await prefs.setInt('hints', hints);
@@ -41,7 +41,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 10;
+      int hints = prefs.getInt('hints') ?? 100;
       stars += 1;
       await prefs.setInt('stars', stars);
       emit(CoinsLoaded(
@@ -55,7 +55,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 10;
+      int hints = prefs.getInt('hints') ?? 100;
       hints -= 1;
       await prefs.setInt('hints', hints);
       emit(CoinsLoaded(

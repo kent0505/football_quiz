@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
 import '../pages/settings_page.dart';
-import '../utils.dart';
 import 'my_button.dart';
 import 'svg_widget.dart';
 
@@ -21,7 +20,7 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      margin: EdgeInsets.only(top: getStatusBar(context)),
+      margin: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
       child: BlocBuilder<CoinsBloc, CoinsState>(
         builder: (context, state) {
           return Row(

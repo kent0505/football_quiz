@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../utils.dart';
 import '../widgets/main_button.dart';
 import '../widgets/svg_widget.dart';
 import 'home_page.dart';
@@ -44,7 +43,7 @@ class _OnboardPageState extends State<OnboardPage> {
           ),
           Column(
             children: [
-              SizedBox(height: 10 + getStatusBar(context)),
+              SizedBox(height: 10 + MediaQuery.of(context).viewPadding.top),
               Text(
                 'Welcome to Our App!',
                 style: TextStyle(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../utils.dart';
 import '../widgets/my_button.dart';
 import '../widgets/custom_scaffold.dart';
 import '../widgets/dialog_widget.dart';
@@ -16,7 +15,7 @@ class SettingsPage extends StatelessWidget {
     return CustomScaffold(
       body: Column(
         children: [
-          SizedBox(height: 8 + getStatusBar(context)),
+          SizedBox(height: 8 + MediaQuery.of(context).viewPadding.top),
           Row(
             children: [
               SizedBox(width: 16),

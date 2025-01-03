@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
-import '../utils.dart';
 import 'my_button.dart';
 import 'svg_widget.dart';
 import '../pages/level_page.dart';
@@ -31,9 +30,7 @@ class LevelCard extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) {
-                        return LevelPage(level: level);
-                      },
+                      builder: (context) => LevelPage(level: level),
                     ),
                   );
                 },
@@ -41,7 +38,7 @@ class LevelCard extends StatelessWidget {
             opacity: lock ? 0.5 : 1,
             child: Container(
               height: 80,
-              width: getWidth(context) / 2 - 20,
+              width: MediaQuery.of(context).size.width / 2 - 20,
               padding: EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 12,

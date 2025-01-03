@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../coins/coins_bloc.dart';
 import '../models/quiz.dart';
 import '../utils.dart';
 import '../widgets/appbar.dart';
 import '../widgets/custom_scaffold.dart';
+import '../widgets/field_card.dart';
 import '../widgets/letter_button.dart';
 import '../widgets/quiz_bottom_buttons.dart';
 
@@ -43,18 +46,9 @@ class _QuizPageState extends State<QuizPage> {
 
   void onHint() {
     if (selected.length < widget.quiz.title.length) {
+      context.read<CoinsBloc>().add(UseHint());
       setState(() {
-        for (int i = 0; i < widget.quiz.title.length; i++) {
-          if (i >= selected.length || selected[i] != widget.quiz.title[i]) {
-            int hintIndex =
-                widget.quiz.letters.indexOf(widget.quiz.title[i].toUpperCase());
-            if (hintIndex != -1 && !selectedIndexes.contains(hintIndex)) {
-              selectedIndexes.add(hintIndex);
-              selected += widget.quiz.letters[hintIndex];
-              break;
-            }
-          }
-        }
+        //
       });
     }
   }
@@ -104,27 +98,7 @@ class _QuizPageState extends State<QuizPage> {
             runSpacing: 8,
             children: List.generate(
               widget.quiz.title.length,
-              (index) {
-                return Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    color: getSelected(index).isEmpty
-                        ? Color(0xff0E2438)
-                        : Color(0xff098CF1),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      getSelected(index),
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'w700',
-                      ),
-                    ),
-                  ),
-                );
-              },
+              (index) => FieldCard(selected: getSelected(index)),
             ),
           ),
           Spacer(),

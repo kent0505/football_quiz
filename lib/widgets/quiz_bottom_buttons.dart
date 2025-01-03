@@ -34,15 +34,9 @@ class QuizBottomButtons extends StatelessWidget {
           Row(
             children: [
               SizedBox(width: 32),
-              _Button(
-                asset: 'assets/x.svg',
-                onPressed: onClear,
-              ),
+              _Button(asset: 'assets/x.svg', onPressed: onClear),
               Spacer(),
-              _Button(
-                asset: 'assets/del.svg',
-                onPressed: onDel,
-              ),
+              _Button(asset: 'assets/del.svg', onPressed: onDel),
               Spacer(),
               BlocBuilder<CoinsBloc, CoinsState>(
                 builder: (context, state) {
@@ -50,7 +44,6 @@ class QuizBottomButtons extends StatelessWidget {
                     return MyButton(
                       onPressed: () {
                         if (state.hints >= 1) {
-                          context.read<CoinsBloc>().add(UseHint());
                           onHint();
                         } else {
                           if (state.coins >= 50) {
