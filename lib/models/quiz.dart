@@ -300,4 +300,62 @@ List<Quiz> quizesList = [
     letters: ['B', 'E', 'N', 'F', 'I', 'C', 'A', 'R', 'T', 'O', 'L', 'S'],
     completed: false,
   ),
+
+  //
+  Quiz(
+    level: 4,
+    title: 'Porto',
+    asset: 'assets/logo/25.png',
+    letters: ['P', 'O', 'R', 'T', 'O', 'A', 'L', 'B', 'E', 'S', 'N', 'K'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Sporting',
+    asset: 'assets/logo/26.png',
+    letters: ['S', 'P', 'O', 'R', 'T', 'I', 'N', 'G', 'A', 'V', 'L', 'X'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Celtic',
+    asset: 'assets/logo/27.png',
+    letters: ['C', 'E', 'L', 'T', 'I', 'C', 'A', 'R', 'S', 'M', 'P', 'B'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Rangers',
+    asset: 'assets/logo/28.png',
+    letters: ['R', 'A', 'N', 'G', 'E', 'R', 'S', 'T', 'O', 'V', 'L', 'P'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Galatasaray',
+    asset: 'assets/logo/29.png',
+    letters: ['G', 'A', 'L', 'A', 'T', 'A', 'S', 'A', 'R', 'A', 'Y', 'B'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Fenerbahce',
+    asset: 'assets/logo/30.png',
+    letters: ['F', 'E', 'N', 'E', 'R', 'B', 'A', 'H', 'C', 'E', 'T', 'S'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'PSV',
+    asset: 'assets/logo/31.png',
+    letters: ['P', 'S', 'V', 'A', 'L', 'I', 'R', 'T', 'O', 'N', 'M', 'U'],
+    completed: false,
+  ),
+  Quiz(
+    level: 4,
+    title: 'Feyenoord',
+    asset: 'assets/logo/32.png',
+    letters: ['F', 'E', 'Y', 'E', 'N', 'O', 'O', 'R', 'D', 'L', 'A', 'T'],
+    completed: false,
+  ),
 ];

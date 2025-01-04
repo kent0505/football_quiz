@@ -14,7 +14,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 100;
+      int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
       bool onboard = prefs.getBool('onboard') ?? true;
 
@@ -34,7 +34,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 100;
+      int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
       List<Quiz> quizes = await getQuizes();
@@ -58,11 +58,11 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 100;
+      int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
       stars += 1;
-      coins += 50;
+      coins += 25;
       await prefs.setInt('stars', stars);
       await prefs.setInt('coins', coins);
 
@@ -84,7 +84,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 100;
+      int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
       List<Quiz> quizes = await getQuizes();
@@ -106,7 +106,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       await prefs.clear();
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
-      int hints = prefs.getInt('hints') ?? 100;
+      int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
       for (Quiz quiz in quizesList) {
