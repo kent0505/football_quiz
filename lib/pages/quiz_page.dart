@@ -50,10 +50,10 @@ class _QuizPageState extends State<QuizPage> {
 
   void onHint() {
     if (selected.length < quiz.title.length) {
-      context.read<CoinsBloc>().add(UseHint());
       for (int i = 0; i < quiz.letters.length; i++) {
         if (quiz.letters[i] == quiz.title[selected.length].toUpperCase()) {
           selectLetter(quiz.title[selected.length].toUpperCase(), i);
+          context.read<CoinsBloc>().add(UseHint());
           break;
         }
       }
@@ -73,7 +73,6 @@ class _QuizPageState extends State<QuizPage> {
       if (selected.toLowerCase() == quiz.title.toLowerCase()) {
         if (!quiz.completed) {
           context.read<CoinsBloc>().add(AddStars(quiz: quiz));
-          quiz.completed = true;
         }
         win = true;
       }

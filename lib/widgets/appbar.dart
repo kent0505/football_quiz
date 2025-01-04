@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:football_quiz/widgets/ads_card.dart';
 
 import '../coins/coins_bloc.dart';
 import '../pages/settings_page.dart';
@@ -63,7 +64,82 @@ class Appbar extends StatelessWidget {
           ),
           Spacer(),
           MyButton(
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                backgroundColor: Color(0xff0E2438),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+                ),
+                builder: (context) {
+                  return SizedBox(
+                    height: 510,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 8),
+                        Container(
+                          height: 5,
+                          width: 36,
+                          decoration: BoxDecoration(
+                            color: Color(0xff3d3d3d).withValues(alpha: 0.5),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Row(
+                          children: [
+                            SizedBox(width: 16),
+                            Text(
+                              'Take more money',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'w700',
+                              ),
+                            ),
+                            Spacer(),
+                            MyButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(
+                                Icons.close_rounded,
+                                color: Color(0xff97E10A),
+                                weight: 2,
+                                size: 26,
+                              ),
+                            ),
+                            SizedBox(width: 16),
+                          ],
+                        ),
+                        Expanded(
+                          child: ListView(
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            children: [
+                              SizedBox(height: 24),
+                              AdsCard(id: 1, amount: 200),
+                              SizedBox(height: 8),
+                              AdsCard(id: 2, amount: 400),
+                              SizedBox(height: 8),
+                              AdsCard(id: 3, amount: 600),
+                              SizedBox(height: 8),
+                              AdsCard(id: 4, amount: 800),
+                              SizedBox(height: 8),
+                              AdsCard(id: 5, amount: 1000),
+                              SizedBox(height: 8),
+                              AdsCard(id: 6, amount: 1200),
+                              SizedBox(height: 8),
+                              AdsCard(id: 7, amount: 1400),
+                              SizedBox(height: 24),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
             minSize: 44,
             child: Container(
               height: 44,

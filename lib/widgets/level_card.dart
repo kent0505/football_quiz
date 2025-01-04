@@ -33,80 +33,84 @@ class LevelCard extends StatelessWidget {
                     ),
                   );
                 },
-          child: Opacity(
-            opacity: lock ? 0.5 : 1,
-            child: Container(
-              height: 80,
-              width: MediaQuery.of(context).size.width / 2 - 20,
-              padding: EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 12,
-              ),
-              decoration: BoxDecoration(
-                color: Color(0xff0E2438),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Stack(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Level ${level.toString().padLeft(2, '0')}',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'w700',
+          child: SizedBox(
+            height: 80,
+            width: MediaQuery.of(context).size.width / 2 - 20,
+            child: Stack(
+              children: [
+                Opacity(
+                  opacity: lock ? 0.5 : 1,
+                  child: Container(
+                    height: 80,
+                    width: MediaQuery.of(context).size.width / 2 - 20,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xff0E2438),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Level ${level.toString().padLeft(2, '0')}',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'w700',
+                                ),
                               ),
-                            ),
-                            if (lock)
-                              Row(
-                                children: [
-                                  SvgWidget('assets/star.svg'),
-                                  SizedBox(width: 6),
-                                  Text(
-                                    stars.toString(),
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontFamily: 'w500',
-                                    ),
-                                  ),
-                                ],
-                              )
-                            else
-                              BlocBuilder<CoinsBloc, CoinsState>(
-                                builder: (context, state) {
-                                  if (state is CoinsLoaded) {
-                                    return Text(
-                                      '${state.quizes.where((quiz) => quiz.level == level && quiz.completed).length}/8',
+                              if (lock)
+                                Row(
+                                  children: [
+                                    SvgWidget('assets/star.svg'),
+                                    SizedBox(width: 6),
+                                    Text(
+                                      stars.toString(),
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 12,
                                         fontFamily: 'w500',
                                       ),
-                                    );
-                                  }
+                                    ),
+                                  ],
+                                )
+                              else
+                                BlocBuilder<CoinsBloc, CoinsState>(
+                                  builder: (context, state) {
+                                    if (state is CoinsLoaded) {
+                                      return Text(
+                                        '${state.quizes.where((quiz) => quiz.level == level && quiz.completed).length}/8',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontFamily: 'w500',
+                                        ),
+                                      );
+                                    }
 
-                                  return Container();
-                                },
-                              ),
-                          ],
+                                    return Container();
+                                  },
+                                ),
+                            ],
+                          ),
                         ),
-                      ),
-                      SvgWidget('assets/arrow-right.svg'),
-                    ],
-                  ),
-                  if (lock)
-                    Center(
-                      child: SvgWidget('assets/lock.svg'),
+                        SvgWidget('assets/arrow-right.svg'),
+                      ],
                     ),
-                ],
-              ),
+                  ),
+                ),
+                if (lock)
+                  Center(
+                    child: SvgWidget('assets/lock.svg'),
+                  ),
+              ],
             ),
           ),
         );

@@ -92,7 +92,6 @@ class SettingsPage extends StatelessWidget {
                       context.read<CoinsBloc>().add(ClearData());
 
                       if (context.mounted) {
-                        context.read<CoinsBloc>().add(LoadCoins());
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(

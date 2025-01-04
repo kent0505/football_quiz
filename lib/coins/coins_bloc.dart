@@ -15,6 +15,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
       int hints = prefs.getInt('hints') ?? 100;
+      int ads = prefs.getInt('ads') ?? 1;
       bool onboard = prefs.getBool('onboard') ?? true;
 
       List<Quiz> quizes = await getQuizes();
@@ -23,6 +24,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
         coins: coins,
         stars: stars,
         hints: hints,
+        ads: ads,
         quizes: quizes,
         onboard: onboard,
       ));
@@ -33,6 +35,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
       int hints = prefs.getInt('hints') ?? 100;
+      int ads = prefs.getInt('ads') ?? 1;
 
       List<Quiz> quizes = await getQuizes();
 
@@ -45,8 +48,9 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       emit(CoinsLoaded(
         coins: coins,
         stars: stars,
-        quizes: quizes,
         hints: hints,
+        ads: ads,
+        quizes: quizes,
       ));
     });
 
@@ -55,6 +59,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
       int hints = prefs.getInt('hints') ?? 100;
+      int ads = prefs.getInt('ads') ?? 1;
 
       stars += 1;
       await prefs.setInt('stars', stars);
@@ -67,8 +72,9 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       emit(CoinsLoaded(
         coins: coins,
         stars: stars,
-        quizes: quizes,
         hints: hints,
+        ads: ads,
+        quizes: quizes,
       ));
     });
 
@@ -77,6 +83,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
       int hints = prefs.getInt('hints') ?? 100;
+      int ads = prefs.getInt('ads') ?? 1;
 
       List<Quiz> quizes = await getQuizes();
 
@@ -86,8 +93,9 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       emit(CoinsLoaded(
         coins: coins,
         stars: stars,
-        quizes: quizes,
         hints: hints,
+        ads: ads,
+        quizes: quizes,
       ));
     });
 
@@ -97,6 +105,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int coins = prefs.getInt('coins') ?? 100;
       int stars = prefs.getInt('stars') ?? 0;
       int hints = prefs.getInt('hints') ?? 100;
+      int ads = prefs.getInt('ads') ?? 1;
 
       for (Quiz quiz in quizesList) {
         quiz.completed = false;
@@ -107,8 +116,9 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       emit(CoinsLoaded(
         coins: coins,
         stars: stars,
-        quizes: quizes,
         hints: hints,
+        ads: ads,
+        quizes: quizes,
       ));
     });
   }
