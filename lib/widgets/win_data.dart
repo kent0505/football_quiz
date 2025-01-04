@@ -47,7 +47,7 @@ class WinData extends StatelessWidget {
 
                             return Container(
                               height: 24,
-                              width: 154 / 8 * index,
+                              width: 154 / (quiz.level * 8) * index,
                               decoration: BoxDecoration(
                                 color: Color(0xff098CF1),
                                 borderRadius: BorderRadius.circular(24),
@@ -71,7 +71,7 @@ class WinData extends StatelessWidget {
                 builder: (context, state) {
                   if (state is CoinsLoaded) {
                     return Text(
-                      '${state.stars}/8',
+                      '${state.stars}/${quiz.level * 8}',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -110,7 +110,7 @@ class WinData extends StatelessWidget {
                       int stars = state.stars;
 
                       return Text(
-                        '${8 - stars} to unlock level ${quiz.level + 1}',
+                        '${quiz.level * 8 - stars} to unlock level ${quiz.level + 1}',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,

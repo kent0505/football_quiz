@@ -13,10 +13,7 @@ import '../widgets/quiz_bottom_buttons.dart';
 import '../widgets/win_data.dart';
 
 class QuizPage extends StatefulWidget {
-  const QuizPage({
-    super.key,
-    required this.quiz,
-  });
+  const QuizPage({super.key, required this.quiz});
 
   final Quiz quiz;
 
@@ -126,14 +123,17 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
           SizedBox(height: 32),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: List.generate(
-              quiz.title.length,
-              (index) => FieldCard(
-                selected: getSelected(index),
-                win: win,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: List.generate(
+                quiz.title.length,
+                (index) => FieldCard(
+                  selected: getSelected(index),
+                  win: win,
+                ),
               ),
             ),
           ),
@@ -141,8 +141,8 @@ class _QuizPageState extends State<QuizPage> {
           if (win)
             WinData(quiz: quiz)
           else ...[
-            SizedBox(
-              width: 48 * 6 + 8 * 5,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Wrap(
                 spacing: 8,
                 runSpacing: 8,
@@ -151,6 +151,7 @@ class _QuizPageState extends State<QuizPage> {
                   (index) => LetterButton(
                     letter: quiz.letters[index],
                     selected: selectedIndexes.contains(index),
+                    height: quiz.letters.length > 16 ? 34 : 42,
                     onPressed: () {
                       selectLetter(quiz.letters[index], index);
                     },
@@ -168,7 +169,9 @@ class _QuizPageState extends State<QuizPage> {
                   child: MainButton(
                     title: 'Next',
                     onPressed: () {
-                      onNext(state is CoinsLoaded ? state.quizes : []);
+                      onNext(state is CoinsLoaded
+                          ? getQuizesByLevel(state.quizes, quiz.level)
+                          : []);
                     },
                   ),
                 );
