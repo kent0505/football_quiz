@@ -358,4 +358,62 @@ List<Quiz> quizesList = [
     letters: ['F', 'E', 'Y', 'E', 'N', 'O', 'O', 'R', 'D', 'L', 'A', 'T'],
     completed: false,
   ),
+
+  //
+  Quiz(
+    level: 5,
+    title: 'River Plate',
+    asset: 'assets/logo/33.png',
+    letters: ['R', 'I', 'V', 'E', 'R', 'P', 'L', 'A', 'T', 'E', 'S', ' '],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Flamengo',
+    asset: 'assets/logo/34.png',
+    letters: ['F', 'L', 'A', 'M', 'E', 'N', 'G', 'O', 'R', 'T', 'S', 'P'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Palmeiras',
+    asset: 'assets/logo/35.png',
+    letters: ['P', 'A', 'L', 'M', 'E', 'I', 'R', 'A', 'S', 'T', 'O', 'V'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Santos',
+    asset: 'assets/logo/36.png',
+    letters: ['S', 'A', 'N', 'T', 'O', 'S', 'P', 'L', 'I', 'R', 'C', 'X'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Corinthians',
+    asset: 'assets/logo/37.png',
+    letters: ['C', 'O', 'R', 'I', 'N', 'T', 'H', 'I', 'A', 'N', 'S', 'V'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Internacional',
+    asset: 'assets/logo/38.png',
+    letters: ['I', 'N', 'T', 'E', 'R', 'N', 'A', 'C', 'I', 'O', 'N', 'A', 'L'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Gremio',
+    asset: 'assets/logo/39.png',
+    letters: ['G', 'R', 'E', 'M', 'I', 'O', 'T', 'S', 'P', 'L', 'A', 'K'],
+    completed: false,
+  ),
+  Quiz(
+    level: 5,
+    title: 'Boca Juniors',
+    asset: 'assets/logo/40.png',
+    letters: ['B', 'O', 'C', 'A', 'J', 'U', 'N', 'I', 'O', 'R', 'S', ' '],
+    completed: false,
+  ),
 ];

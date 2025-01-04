@@ -13,7 +13,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
     on<LoadCoins>((event, emit) async {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
-      int stars = prefs.getInt('stars') ?? 0;
+      int stars = prefs.getInt('stars') ?? 100;
       int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
       bool onboard = prefs.getBool('onboard') ?? true;
@@ -33,7 +33,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
     on<BuyHints>((event, emit) async {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
-      int stars = prefs.getInt('stars') ?? 0;
+      int stars = prefs.getInt('stars') ?? 100;
       int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
@@ -57,7 +57,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
     on<AddStars>((event, emit) async {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
-      int stars = prefs.getInt('stars') ?? 0;
+      int stars = prefs.getInt('stars') ?? 100;
       int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
@@ -83,7 +83,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
     on<UseHint>((event, emit) async {
       final prefs = await SharedPreferences.getInstance();
       int coins = prefs.getInt('coins') ?? 100;
-      int stars = prefs.getInt('stars') ?? 0;
+      int stars = prefs.getInt('stars') ?? 100;
       int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
@@ -105,7 +105,7 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       final prefs = await SharedPreferences.getInstance();
       await prefs.clear();
       int coins = prefs.getInt('coins') ?? 100;
-      int stars = prefs.getInt('stars') ?? 0;
+      int stars = prefs.getInt('stars') ?? 100;
       int hints = prefs.getInt('hints') ?? 1000;
       int ads = prefs.getInt('ads') ?? 1;
 
