@@ -4,9 +4,11 @@ class FieldCard extends StatelessWidget {
   const FieldCard({
     super.key,
     required this.selected,
+    required this.win,
   });
 
   final String selected;
+  final bool win;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,11 @@ class FieldCard extends StatelessWidget {
       width: 32,
       height: 32,
       decoration: BoxDecoration(
-        color: selected.isEmpty ? Color(0xff0E2438) : Color(0xff098CF1),
+        color: selected.isEmpty
+            ? Color(0xff0E2438)
+            : win
+                ? Color(0xff97E10A)
+                : Color(0xff098CF1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Center(

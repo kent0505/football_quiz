@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
+import '../pages/level_page.dart';
 import 'my_button.dart';
 import 'svg_widget.dart';
-import '../pages/level_page.dart';
 
 class LevelCard extends StatelessWidget {
   const LevelCard({
@@ -14,7 +14,6 @@ class LevelCard extends StatelessWidget {
   });
 
   final int level;
-
   final int stars;
 
   @override
@@ -80,13 +79,21 @@ class LevelCard extends StatelessWidget {
                                 ],
                               )
                             else
-                              Text(
-                                '5/16',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontFamily: 'w500',
-                                ),
+                              BlocBuilder<CoinsBloc, CoinsState>(
+                                builder: (context, state) {
+                                  if (state is CoinsLoaded) {
+                                    return Text(
+                                      '${state.quizes.where((quiz) => quiz.level == level && quiz.completed).length}/8',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontFamily: 'w500',
+                                      ),
+                                    );
+                                  }
+
+                                  return Container();
+                                },
                               ),
                           ],
                         ),

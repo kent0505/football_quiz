@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/quiz.dart';
 import 'my_button.dart';
 import '../pages/quiz_page.dart';
+import 'svg_widget.dart';
 
 class QuizCard extends StatelessWidget {
   const QuizCard({
@@ -14,6 +15,8 @@ class QuizCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.width / 2 - 20;
+
     return MyButton(
       onPressed: () {
         Navigator.push(
@@ -25,18 +28,33 @@ class QuizCard extends StatelessWidget {
           ),
         );
       },
-      child: Container(
-        height: MediaQuery.of(context).size.width / 2 - 20,
-        width: MediaQuery.of(context).size.width / 2 - 20,
-        padding: EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: Color(0xff0E2438),
-          borderRadius: BorderRadius.circular(28),
-        ),
-        child: Center(
-          child: Image.asset(
-            quiz.asset,
-          ),
+      child: SizedBox(
+        height: height,
+        width: height,
+        child: Stack(
+          children: [
+            Opacity(
+              opacity: quiz.completed ? 0.5 : 1,
+              child: Container(
+                height: height,
+                width: height,
+                padding: EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Color(0xff0E2438),
+                  borderRadius: BorderRadius.circular(28),
+                ),
+                child: Center(
+                  child: Image.asset(
+                    quiz.asset,
+                  ),
+                ),
+              ),
+            ),
+            if (quiz.completed)
+              Center(
+                child: SvgWidget('assets/done.svg'),
+              ),
+          ],
         ),
       ),
     );

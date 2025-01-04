@@ -10,11 +10,13 @@ final class CoinsLoaded extends CoinsState {
     required this.coins,
     required this.stars,
     required this.hints,
+    required this.quizes,
     this.onboard = false,
   });
 
   final int coins;
   final int stars;
   final int hints;
+  final List<Quiz> quizes;
   final bool onboard;
 }

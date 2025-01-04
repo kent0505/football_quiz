@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../coins/coins_bloc.dart';
 import '../widgets/my_button.dart';
 import '../widgets/custom_scaffold.dart';
 import '../widgets/dialog_widget.dart';
@@ -88,9 +89,10 @@ class SettingsPage extends StatelessWidget {
                     description:
                         'Do you really want to clear all data? This action will reset your settings and is irreversible.',
                     onYes: () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      await prefs.clear();
+                      context.read<CoinsBloc>().add(ClearData());
+
                       if (context.mounted) {
+                        context.read<CoinsBloc>().add(LoadCoins());
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(

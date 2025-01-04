@@ -8,7 +8,9 @@ import '../widgets/appbar.dart';
 import '../widgets/custom_scaffold.dart';
 import '../widgets/field_card.dart';
 import '../widgets/letter_button.dart';
+import '../widgets/main_button.dart';
 import '../widgets/quiz_bottom_buttons.dart';
+import '../widgets/win_data.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({
@@ -23,8 +25,10 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  late Quiz quiz;
   String selected = '';
   List<int> selectedIndexes = [];
+  bool win = false;
 
   void onClear() {
     if (selected.isNotEmpty) {
@@ -45,21 +49,50 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void onHint() {
-    if (selected.length < widget.quiz.title.length) {
+    if (selected.length < quiz.title.length) {
       context.read<CoinsBloc>().add(UseHint());
-      setState(() {
-        //
-      });
+      for (int i = 0; i < quiz.letters.length; i++) {
+        if (quiz.letters[i] == quiz.title[selected.length].toUpperCase()) {
+          selectLetter(quiz.title[selected.length].toUpperCase(), i);
+          break;
+        }
+      }
     }
   }
 
   void selectLetter(String value, int index) {
-    if (selected.length < widget.quiz.title.length) {
-      setState(() {
-        selectedIndexes.add(index);
-        selected += value;
-      });
+    if (selected.length < quiz.title.length) {
+      selectedIndexes.add(index);
+      selected += value;
+      check();
     }
+  }
+
+  void check() {
+    setState(() {
+      if (selected.toLowerCase() == quiz.title.toLowerCase()) {
+        if (!quiz.completed) {
+          context.read<CoinsBloc>().add(AddStars(quiz: quiz));
+          quiz.completed = true;
+        }
+        win = true;
+      }
+    });
+  }
+
+  void onNext(List<Quiz> quizes) {
+    setState(() {
+      int index = quizes.indexWhere((q) => q.title == quiz.title);
+      if (index + 1 < quizes.length) {
+        quiz = quizes[index + 1];
+        quiz.letters.shuffle();
+        selected = '';
+        selectedIndexes = [];
+        win = false;
+      } else {
+        Navigator.pop(context);
+      }
+    });
   }
 
   String getSelected(int index) {
@@ -70,7 +103,8 @@ class _QuizPageState extends State<QuizPage> {
   @override
   void initState() {
     super.initState();
-    widget.quiz.letters.shuffle();
+    quiz = widget.quiz;
+    quiz.letters.shuffle();
   }
 
   @override
@@ -78,7 +112,7 @@ class _QuizPageState extends State<QuizPage> {
     return CustomScaffold(
       body: Column(
         children: [
-          Appbar(title: addZero(widget.quiz.level)),
+          Appbar(title: addZero(quiz.level)),
           SizedBox(height: 8),
           Container(
             height: 358,
@@ -89,42 +123,64 @@ class _QuizPageState extends State<QuizPage> {
               borderRadius: BorderRadius.circular(28),
             ),
             child: Center(
-              child: Image.asset(widget.quiz.asset),
+              child: Image.asset(quiz.asset),
             ),
           ),
-          Spacer(),
+          SizedBox(height: 32),
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: List.generate(
-              widget.quiz.title.length,
-              (index) => FieldCard(selected: getSelected(index)),
-            ),
-          ),
-          Spacer(),
-          SizedBox(
-            width: 48 * 6 + 8 * 5,
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: List.generate(
-                widget.quiz.letters.length,
-                (index) => LetterButton(
-                  letter: widget.quiz.letters[index],
-                  selected: selectedIndexes.contains(index),
-                  onPressed: () {
-                    selectLetter(widget.quiz.letters[index], index);
-                  },
-                ),
+              quiz.title.length,
+              (index) => FieldCard(
+                selected: getSelected(index),
+                win: win,
               ),
             ),
           ),
           Spacer(),
-          QuizBottomButtons(
-            onClear: onClear,
-            onDel: onDel,
-            onHint: onHint,
-          ),
+          if (win)
+            WinData(quiz: quiz)
+          else ...[
+            SizedBox(
+              width: 48 * 6 + 8 * 5,
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: List.generate(
+                  quiz.letters.length,
+                  (index) => LetterButton(
+                    letter: quiz.letters[index],
+                    selected: selectedIndexes.contains(index),
+                    onPressed: () {
+                      selectLetter(quiz.letters[index], index);
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Spacer(),
+          ],
+          if (win)
+            BlocBuilder<CoinsBloc, CoinsState>(
+              builder: (context, state) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 44),
+                  child: MainButton(
+                    title: 'Next',
+                    onPressed: () {
+                      onNext(state is CoinsLoaded ? state.quizes : []);
+                    },
+                  ),
+                );
+              },
+            )
+          else
+            QuizBottomButtons(
+              onClear: onClear,
+              onDel: onDel,
+              onHint: onHint,
+            ),
         ],
       ),
     );
