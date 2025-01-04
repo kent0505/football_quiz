@@ -62,7 +62,9 @@ class CoinsBloc extends Bloc<CoinsEvent, CoinsState> {
       int ads = prefs.getInt('ads') ?? 1;
 
       stars += 1;
+      coins += 50;
       await prefs.setInt('stars', stars);
+      await prefs.setInt('coins', coins);
 
       List<Quiz> quizes = await getQuizes();
       final quiz = quizes.firstWhere((quiz) => quiz.title == event.quiz.title);
