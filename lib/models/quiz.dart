@@ -416,4 +416,63 @@ List<Quiz> quizesList = [
     letters: ['B', 'O', 'C', 'A', 'J', 'U', 'N', 'I', 'O', 'R', 'S', ' '],
     completed: false,
   ),
+
+  //
+
+  Quiz(
+    level: 6,
+    title: 'Newcastle',
+    asset: 'assets/logo/41.png',
+    letters: ['N', 'E', 'W', 'C', 'A', 'S', 'T', 'L', 'E', 'P', 'O', 'R'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'Shakhtar',
+    asset: 'assets/logo/42.png',
+    letters: ['S', 'H', 'A', 'K', 'T', 'H', 'A', 'R', 'D', 'O', 'N', 'E'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'Dynamo',
+    asset: 'assets/logo/43.png',
+    letters: ['D', 'Y', 'N', 'A', 'M', 'O', 'K', 'Y', 'I', 'V', 'R', 'T'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'Red Star',
+    asset: 'assets/logo/44.png',
+    letters: ['R', 'E', 'D', 'S', 'T', 'A', 'R', 'B', 'E', 'L', ' ', 'A'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'Olympiacos',
+    asset: 'assets/logo/45.png',
+    letters: ['O', 'L', 'Y', 'M', 'P', 'I', 'A', 'C', 'O', 'S', 'T', 'R'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'PAOK',
+    asset: 'assets/logo/46.png',
+    letters: ['P', 'A', 'O', 'K', 'L', 'S', 'T', 'R', 'O', 'M', 'N', 'V'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'CSKA',
+    asset: 'assets/logo/47.png',
+    letters: ['C', 'S', 'K', 'A', 'M', 'O', 'S', 'C', 'O', 'W', 'T', 'R'],
+    completed: false,
+  ),
+  Quiz(
+    level: 6,
+    title: 'Spartak',
+    asset: 'assets/logo/48.png',
+    letters: ['S', 'P', 'A', 'R', 'T', 'A', 'K', 'M', 'O', 'S', 'C', 'W'],
+    completed: false,
+  ),
 ];
