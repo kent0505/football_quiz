@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import '../themes.dart';
 
-class MyButton extends StatelessWidget {
-  const MyButton({
+class CButton extends StatelessWidget {
+  const CButton({
     super.key,
     this.onPressed,
     this.padding = 0,

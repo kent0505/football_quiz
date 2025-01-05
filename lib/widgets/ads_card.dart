@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import 'svg_widget.dart';
 
 class AdsCard extends StatelessWidget {
@@ -21,7 +21,7 @@ class AdsCard extends StatelessWidget {
       builder: (context, state) {
         final lock = state is CoinsLoaded && state.ads < id;
 
-        return MyButton(
+        return CButton(
           onPressed: lock ? null : () {},
           child: SizedBox(
             height: 52,

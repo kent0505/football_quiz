@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => InternetBloc()..add(CheckInternet())),
+        BlocProvider(
+          create: (context) => InternetBloc()..add(CheckConnection()),
+        ),
         BlocProvider(create: (context) => CoinsBloc()),
       ],
       child: MaterialApp(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'my_button.dart';
+import 'c_button.dart';
 import 'svg_widget.dart';
 import '../pages/shop_page.dart';
 
@@ -9,7 +9,7 @@ class ShopButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyButton(
+    return CButton(
       onPressed: () {
         Navigator.push(
           context,

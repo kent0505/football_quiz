@@ -15,9 +15,6 @@ final theme = ThemeData(
 
 const cupertinoTheme = CupertinoThemeData(
   textTheme: CupertinoTextThemeData(
-    textStyle: TextStyle(
-      fontFamily: 'w700',
-      color: Colors.black,
-    ),
+    textStyle: TextStyle(fontFamily: 'w700', color: Colors.black),
   ),
 );

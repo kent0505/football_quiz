@@ -14,7 +14,6 @@ final class CoinsLoaded extends CoinsState {
     required this.quizes,
     this.onboard = false,
   });
-
   final int coins;
   final int stars;
   final int hints;

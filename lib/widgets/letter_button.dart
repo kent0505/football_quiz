@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'my_button.dart';
+import 'c_button.dart';
 
 class LetterButton extends StatelessWidget {
   const LetterButton({
@@ -18,7 +18,7 @@ class LetterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyButton(
+    return CButton(
       onPressed: selected ? null : onPressed,
       minSize: height,
       child: Container(

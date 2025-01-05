@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
-import '../widgets/my_button.dart';
+import '../widgets/c_button.dart';
 import '../widgets/custom_scaffold.dart';
 import '../widgets/dialog_widget.dart';
 import '../widgets/svg_widget.dart';
@@ -20,7 +20,7 @@ class SettingsPage extends StatelessWidget {
           Row(
             children: [
               SizedBox(width: 16),
-              MyButton(
+              CButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -125,7 +125,7 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyButton(
+    return CButton(
       onPressed: onPressed,
       child: Container(
         height: 52,

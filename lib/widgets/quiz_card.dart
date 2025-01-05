@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/quiz.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import '../pages/quiz_page.dart';
 import 'svg_widget.dart';
 
@@ -17,7 +17,7 @@ class QuizCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.width / 2 - 20;
 
-    return MyButton(
+    return CButton(
       onPressed: () {
         Navigator.push(
           context,

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
 import 'dialog_widget.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import 'svg_widget.dart';
 
 class QuizBottomButtons extends StatelessWidget {
@@ -41,7 +41,7 @@ class QuizBottomButtons extends StatelessWidget {
               BlocBuilder<CoinsBloc, CoinsState>(
                 builder: (context, state) {
                   if (state is CoinsLoaded) {
-                    return MyButton(
+                    return CButton(
                       onPressed: () {
                         if (state.hints >= 1) {
                           onHint();
@@ -172,7 +172,7 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyButton(
+    return CButton(
       onPressed: onPressed,
       child: Container(
         height: 60,

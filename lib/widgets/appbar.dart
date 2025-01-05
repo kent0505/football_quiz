@@ -4,7 +4,7 @@ import 'package:football_quiz/widgets/ads_card.dart';
 
 import '../coins/coins_bloc.dart';
 import '../pages/settings_page.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import 'svg_widget.dart';
 
 class Appbar extends StatelessWidget {
@@ -25,7 +25,7 @@ class Appbar extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: 16),
-          MyButton(
+          CButton(
             onPressed: () {
               home
                   ? Navigator.push(
@@ -63,7 +63,7 @@ class Appbar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          MyButton(
+          CButton(
             onPressed: () {
               showModalBottomSheet(
                 context: context,
@@ -98,7 +98,7 @@ class Appbar extends StatelessWidget {
                               ),
                             ),
                             Spacer(),
-                            MyButton(
+                            CButton(
                               onPressed: () {
                                 Navigator.pop(context);
                               },

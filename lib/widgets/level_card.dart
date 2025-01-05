@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
 import '../pages/level_page.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import 'svg_widget.dart';
 
 class LevelCard extends StatelessWidget {
@@ -22,7 +22,7 @@ class LevelCard extends StatelessWidget {
       builder: (context, state) {
         final lock = state is CoinsLoaded && state.stars < stars;
 
-        return MyButton(
+        return CButton(
           onPressed: lock
               ? null
               : () {

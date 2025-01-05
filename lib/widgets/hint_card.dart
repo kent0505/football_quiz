@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../coins/coins_bloc.dart';
-import 'my_button.dart';
+import 'c_button.dart';
 import 'dialog_widget.dart';
 import 'svg_widget.dart';
 
@@ -13,7 +13,7 @@ class HintCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CoinsBloc, CoinsState>(
       builder: (context, state) {
-        return MyButton(
+        return CButton(
           onPressed: () async {
             if (state is CoinsLoaded && state.coins >= 50) {
               context.read<CoinsBloc>().add(BuyHints());

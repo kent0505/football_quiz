@@ -6,22 +6,19 @@ part 'internet_event.dart';
 part 'internet_state.dart';
 
 class InternetBloc extends Bloc<InternetEvent, InternetState> {
-  final _connectivity = Connectivity();
+  final connectivity = Connectivity();
 
   InternetBloc() : super(InternetInitial()) {
     on<InternetEvent>(
       (event, emit) => switch (event) {
-        CheckInternet() => _checkInternet(event, emit),
-        ChangeInternet() => changeInternet(event, emit),
+        CheckConnection() => _checkConnection(event, emit),
+        ChangeInternet() => _changeStatus(event, emit),
       },
     );
   }
 
-  void _checkInternet(
-    CheckInternet event,
-    Emitter<InternetState> emit,
-  ) {
-    _connectivity.onConnectivityChanged.listen((result) {
+  void _checkConnection(CheckConnection event, Emitter<InternetState> emit) {
+    connectivity.onConnectivityChanged.listen((result) {
       if (result.contains(ConnectivityResult.mobile)) {
         add(ChangeInternet(connected: true));
       } else if (result.contains(ConnectivityResult.wifi)) {
@@ -32,10 +29,7 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
     });
   }
 
-  void changeInternet(
-    ChangeInternet event,
-    Emitter<InternetState> emit,
-  ) {
+  void _changeStatus(ChangeInternet event, Emitter<InternetState> emit) {
     event.connected ? emit(InternetSuccess()) : emit(InternetFailure());
   }
 }

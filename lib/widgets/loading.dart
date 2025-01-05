@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 
 import 'svg_widget.dart';
 
-class LoadingWidget extends StatefulWidget {
-  const LoadingWidget({super.key});
+class Loading extends StatefulWidget {
+  const Loading({super.key});
 
   @override
-  State<LoadingWidget> createState() => _LoadingWidgetState();
+  State<Loading> createState() => _LoadingState();
 }
 
-class _LoadingWidgetState extends State<LoadingWidget>
-    with SingleTickerProviderStateMixin {
+class _LoadingState extends State<Loading> with SingleTickerProviderStateMixin {
   late AnimationController controller;
 
   @override

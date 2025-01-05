@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'my_button.dart';
+import 'c_button.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
@@ -24,7 +24,7 @@ class MainButton extends StatelessWidget {
         color: Color(0xff97E10A),
         borderRadius: BorderRadius.circular(52),
       ),
-      child: MyButton(
+      child: CButton(
         onPressed: onPressed,
         child: Center(
           child: Text(
