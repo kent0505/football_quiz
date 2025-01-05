@@ -475,4 +475,62 @@ List<Quiz> quizesList = [
     letters: ['S', 'P', 'A', 'R', 'T', 'A', 'K', 'M', 'O', 'S', 'C', 'W'],
     completed: false,
   ),
+
+  //
+  Quiz(
+    level: 7,
+    title: 'Lokomotiv',
+    asset: 'assets/logo/49.png',
+    letters: ['L', 'O', 'K', 'O', 'M', 'O', 'T', 'I', 'V', 'R', 'E', 'S'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Club Brugge',
+    asset: 'assets/logo/50.png',
+    letters: ['C', 'L', 'U', 'B', 'B', 'R', 'U', 'G', 'G', 'E', 'S', ' '],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Anderlecht',
+    asset: 'assets/logo/51.png',
+    letters: ['A', 'N', 'D', 'E', 'R', 'L', 'E', 'C', 'H', 'T', 'O', 'P'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Basel',
+    asset: 'assets/logo/52.png',
+    letters: ['B', 'A', 'S', 'E', 'L', 'T', 'R', 'O', 'N', 'I', 'M', 'P'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Young Boys',
+    asset: 'assets/logo/53.png',
+    letters: ['Y', 'O', 'U', 'N', 'G', 'B', 'O', 'Y', 'S', ' ', 'T', 'E'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Al Ahly',
+    asset: 'assets/logo/54.png',
+    letters: ['A', 'L', 'A', 'H', 'L', 'Y', 'T', ' ', 'O', 'N', 'I', 'M'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Zamalek',
+    asset: 'assets/logo/55.png',
+    letters: ['Z', 'A', 'M', 'A', 'L', 'E', 'K', 'T', 'R', 'O', 'S', 'N'],
+    completed: false,
+  ),
+  Quiz(
+    level: 7,
+    title: 'Kaizer Chiefs',
+    asset: 'assets/logo/56.png',
+    letters: ['K', 'A', 'I', 'Z', 'E', 'R', 'C', 'H', 'I', 'E', 'F', 'S', ' '],
+    completed: false,
+  ),
 ];
